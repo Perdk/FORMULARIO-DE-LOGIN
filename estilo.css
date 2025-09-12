@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:#201b2c;
+    overflow: hidden;
+}
+
+.img img {
+    height: 400px;
+    margin-right: 100%;
+}
+
+.img h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #77ffc0;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-top: 50px;
+    gap:60px;
+    height: 100vh; /*CENTRALIZOU ELES AO MEIO*/
+}
+
+label{
+    color: #b1b1b1;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+form{ /*DEIXA EM COLUNA*/
+    display: flex; 
+    flex-direction: column;
+}
+
+.form-login {
+    width: 25%;
+    border: 1px solid transparent;
+    padding: 70px;
+    border-radius: 30px;
+    background-color: #262135;
+    animation: subirDescer 2s ease-in-out infinite;  
+}
+
+.form-login h2 {
+    color: rgb(7, 235, 166);
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-login input{
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    margin:10px 1px;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+    background-color:#373047;
+}
+
+.form-login input[type="submit"] {
+    color: #fff;
+    background-color:rgb(7, 187, 133);
+    transition: .2s; /*O BOTAO FAZ UMA ABERTURA MAIS SUAVE*/
+    text-transform: uppercase;
+    
+}
+
+.form-login input[type="submit"]:hover{ 
+    box-shadow: 0 0 2px #016e4e, 0 0 15px #016e4e, 0 0 25px #016e4e, 0 0 15px #016e4e;/*DIMINUIR TA MT FORTE*/ 
+    cursor: pointer;
+    transform: scale(1.05); /*DA AQUELE ZOOM NO BOTAO*/
+}
+
+
+.form-login input[type="text"],
+.form-login input[type="password"]:focus{
+    outline: none;
+}
+
+
+/*ANIMAÇÃO*/
+
+@keyframes subirDescer {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/*APENAS RESPONSIVIDADE - EM CONSTRUÇÃO*/
+
+@media (max-width: 768px){    
+    body{
+        overflow: hidden;
+    }
+
+    main {
+        flex-direction:column;
+        margin-top: 25%;
+    }
+
+    .img img {
+        display: none;
+    }
+    
+    .img h1 {
+        font-size: 17px;
+    }
+
+    .form-login {
+        width: 60%;
+        margin-bottom: 100%;
+    }
+
+}
+
+
+@media (max-width:480px){
+    main{
+        flex-direction: column;
+        margin-top: 45%;
+        display: flex;
+        margin-left: 20%;
+    }
+
+    .img h1 {
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .form-login{
+        width: 100%;
+    }
+
+    .form-login input[type="submit"] {
+    font-size: 15px;
+    }
+
+}
+
